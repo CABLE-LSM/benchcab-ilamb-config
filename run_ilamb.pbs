@@ -1,0 +1,20 @@
+#!/bin/bash
+#PBS -N benchcab-ilamb
+#PBS -l wd
+#PBS -P tm70
+#PBS -q normal
+#PBS -l walltime=1:00:00  
+#PBS -l ncpus=1
+#PBS -l mem=8GB           
+#PBS -l storage=gdata/hh5+gdata/ct11
+
+module use /g/data/hh5/public/modules
+module load conda
+
+export ILAMB_ROOT=`realpath ILAMB_ROOT`
+
+ilamb-run \
+  --config cable.cfg \
+  --model_root $ILAMB_ROOT/MODELS/ \
+  --regions global \
+  --model_year 1903 1984 \
