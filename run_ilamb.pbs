@@ -17,4 +17,4 @@ mpiexec -n $PBS_NCPUS ilamb-run \
   --config cable.cfg \
   --model_root $ILAMB_ROOT/MODELS/ \
   --regions global \
-  --model_year 1903 1984 \
+  --model_year 1901 2000 \
